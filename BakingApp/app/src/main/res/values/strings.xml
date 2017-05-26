@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Baking App</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="sample_step_description">Step description</string>
+    <string name="steps">Steps</string>
+    <string name="title_recipe_widget">Nutella Pie Ingredients</string>
+</resources>

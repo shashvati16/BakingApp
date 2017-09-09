@@ -13,7 +13,7 @@ Get access to number of baking recipes with step by step video to follow along.
 * Espresso
 ## License
 ```
-Copyright (C) 2017 Shashvati Dash - Popular Movies Project for Udacity Android Nanodegree
+Copyright (C) 2017 Shashvati Dash - Baking app Project for Udacity Android Nanodegree
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.

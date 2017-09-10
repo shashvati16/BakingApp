@@ -12,6 +12,7 @@
         android:layout_margin="5dp">
         <TextView
             android:id="@+id/recipe_steps_text"
+            android:background="#FFCC80"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingLeft="16dp"

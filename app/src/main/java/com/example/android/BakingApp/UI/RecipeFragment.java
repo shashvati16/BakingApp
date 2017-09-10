@@ -102,9 +102,9 @@ public class RecipeFragment extends Fragment implements LoaderManager.LoaderCall
                 String recipeResults=null;
                 try {
                     URL recipeUrl = new URL(urlString);
-                    if(isOnline()==true) {
+                    //if(isOnline()==true) {
                         recipeResults= NetworkUtil.getResponseFromHttpUrl(recipeUrl);
-                    }
+                    //}
                     mRecipesData = NetworkUtil.getRecipesObjectsFromJson(recipeResults);
 
 

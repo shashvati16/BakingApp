@@ -11,9 +11,10 @@ Get access to number of baking recipes with step by step video to follow along.
 * Exoplayer
 * Tmber
 * Espresso
+* Butterknife
 ## UI MOCKS
-![recipes card](https://user-images.githubusercontent.com/23104247/30244773-ba3f8a06-9592-11e7-9ab6-b5056c7de54a.PNG)
-![recipedetails](https://user-images.githubusercontent.com/23104247/30244775-cf9449be-9592-11e7-9893-1a39e5419cd6.PNG)
+![recipes card](https://user-images.githubusercontent.com/23104247/30325160-a8663efa-9791-11e7-97da-dc1072d8fbe2.PNG)
+![recipedetails](https://user-images.githubusercontent.com/23104247/30325163-aaf70bfe-9791-11e7-8a71-fcbaa9a28a82.PNG)
 
 ![step screen](https://user-images.githubusercontent.com/23104247/30244789-fdf2e9fa-9592-11e7-8e6d-1b30d985fdca.PNG)
 ![bakingapp widget](https://user-images.githubusercontent.com/23104247/30244790-00442eb2-9593-11e7-8c4f-fd499845e31b.PNG)

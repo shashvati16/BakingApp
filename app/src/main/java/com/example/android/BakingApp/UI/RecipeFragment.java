@@ -30,6 +30,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import timber.log.Timber;
 
 /**
@@ -41,7 +43,7 @@ public class RecipeFragment extends Fragment implements LoaderManager.LoaderCall
     private Parcelable[] recipeList;
     private RecipeAdapter rAdapter;
 
-    private RecyclerView mRecyclerView;
+    @BindView(R.id.recipes) RecyclerView mRecyclerView ;
     private static final int RECIPE_LOADER_ID = 0;
     public onTextClickListener mCallback;
     public interface onTextClickListener{
@@ -60,12 +62,12 @@ public class RecipeFragment extends Fragment implements LoaderManager.LoaderCall
         else {
             recipeList = savedInstanceState.getParcelableArray("recipes");
         }
-        mRecyclerView = (RecyclerView) rv.findViewById(R.id.recipes);
+        ButterKnife.bind(this,rv);
         if(getResources().getBoolean(R.bool.is_tab)==false) {
-            LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
+            LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
             mRecyclerView.setLayoutManager(layoutManager);
         }else{
-            GridLayoutManager gridLayoutManager = new GridLayoutManager(this.getActivity(),3);
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),3);
             mRecyclerView.setLayoutManager(gridLayoutManager);
         }
         mRecyclerView.setHasFixedSize(true);
@@ -102,9 +104,9 @@ public class RecipeFragment extends Fragment implements LoaderManager.LoaderCall
                 String recipeResults=null;
                 try {
                     URL recipeUrl = new URL(urlString);
-                    //if(isOnline()==true) {
+                    if(isOnline()==true) {
                         recipeResults= NetworkUtil.getResponseFromHttpUrl(recipeUrl);
-                    //}
+                    }
                     mRecipesData = NetworkUtil.getRecipesObjectsFromJson(recipeResults);
 
 
@@ -141,6 +143,7 @@ public class RecipeFragment extends Fragment implements LoaderManager.LoaderCall
     @Override
     public void onLoadFinished(Loader<Recipes[]> loader, Recipes[] recipeData) {
         recipes = recipeData;
+
         rAdapter = new RecipeAdapter(this,recipeData);
         mRecyclerView.setAdapter(rAdapter);
 
@@ -185,6 +188,5 @@ public class RecipeFragment extends Fragment implements LoaderManager.LoaderCall
         ContentValues contentValues = new ContentValues();
         int delete = getActivity().getContentResolver().delete(RecipeContract.RecipeEntry.CONTENT_URI, null, null);
     }
-
 
 }

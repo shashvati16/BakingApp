@@ -12,11 +12,14 @@ import android.widget.Toast;
 import com.example.android.BakingApp.Data.Steps;
 import com.example.android.BakingApp.R;
 import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import timber.log.Timber;
 public class RecipeDetailActivity extends AppCompatActivity implements RecipeFragment.onTextClickListener,
         StepsAdapter.StepsAdapterOnClickHandler{
-    RecyclerView ingredients_list;
-    RecyclerView steps_list;
+    @BindView(R.id.ingredients_list)RecyclerView ingredients_list;
+    @BindView(R.id.steps_list)RecyclerView steps_list;
     StepsAdapter mStepsAdapter;
     IngredientsAdapter mIngredientsAdapter;
     private boolean mTwoPane;
@@ -29,8 +32,7 @@ public class RecipeDetailActivity extends AppCompatActivity implements RecipeFra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
         ActionBar actionBar = getSupportActionBar();
-        ingredients_list = (RecyclerView) findViewById(R.id.ingredients_list);
-        steps_list =(RecyclerView) findViewById(R.id.steps_list);
+        ButterKnife.bind(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(RecipeDetailActivity.this);
         ingredients_list.setLayoutManager(layoutManager);
         ingredients_list.hasFixedSize();

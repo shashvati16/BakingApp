@@ -68,6 +68,7 @@ public class StepFragment extends Fragment{
 
         final SimpleExoPlayerView step_videos = (SimpleExoPlayerView)stepView.findViewById(R.id.step_videos);
 
+
         if(getResources().getConfiguration().orientation== Configuration.ORIENTATION_PORTRAIT){
             ImageButton prev_button = (ImageButton) stepView.findViewById(R.id.previous_step);
             ImageButton next_button = (ImageButton) stepView.findViewById(R.id.next_step);
@@ -154,7 +155,6 @@ public class StepFragment extends Fragment{
     public void onSaveInstanceState(Bundle outState) {
         outState.putInt(listIndex,mStepId);
         outState.putParcelableArrayList(stepDetailList,(ArrayList<Steps>) stepList);
-
     }
 
     @Override

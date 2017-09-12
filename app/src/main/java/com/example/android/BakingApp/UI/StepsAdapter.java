@@ -11,6 +11,8 @@ import com.example.android.BakingApp.R;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import timber.log.Timber;
 
 /**
@@ -59,10 +61,10 @@ public class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.StepsAdapter
     }
 
     public class StepsAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private TextView recipe_steps_text;
+        @BindView(R.id.recipe_steps_text) TextView recipe_steps_text;
         public StepsAdapterViewHolder(View itemView) {
             super(itemView);
-            recipe_steps_text = (TextView) itemView.findViewById(R.id.recipe_steps_text);
+            ButterKnife.bind(this,itemView);
             itemView.setOnClickListener(this);
         }
         @Override

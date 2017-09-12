@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.example.android.BakingApp.Data.Recipes;
 import com.example.android.BakingApp.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import timber.log.Timber;
 /**
  * Created by MCLAB on 5/8/2017.
@@ -30,11 +32,11 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeAdap
 
 
     public class RecipeAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private TextView recipeCard;
+        @BindView(R.id.recipe_card_text) TextView recipeCard;
 
         public RecipeAdapterViewHolder(View view) {
             super(view);
-            recipeCard = (TextView) view.findViewById(R.id.recipe_card_text);
+            ButterKnife.bind(this,view);
             view.setOnClickListener(this);
         }
        @Override

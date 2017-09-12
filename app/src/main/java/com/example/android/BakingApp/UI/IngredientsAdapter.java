@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.example.android.BakingApp.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import timber.log.Timber;
 
 /**
@@ -54,11 +56,11 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
     }
 
     public class IngredientsAdapterViewHolder extends RecyclerView.ViewHolder{
-        private TextView ingredients;
 
+        @BindView(R.id.ingredients) TextView ingredients;
         public IngredientsAdapterViewHolder(View itemView) {
             super(itemView);
-            ingredients = (TextView) itemView.findViewById(R.id.ingredients);
+            ButterKnife.bind(this,itemView);
         }
     }
 }
